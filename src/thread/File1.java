@@ -26,7 +26,7 @@ public class File1 {
         });
         Thread thread5 = new Thread(()->{
             Define define = new Define();
-            define.read(download);
+            define.readDownload(download);
             System.out.println(success);
         });
 
@@ -58,6 +58,16 @@ class Define extends Thread {
             }
         }
         System.out.println();
+    }
+    void readDownload(char[] chars) {
+        for (char c : chars) {
+            System.out.print(c);
+            try {
+                Thread.sleep(300);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     @Override
